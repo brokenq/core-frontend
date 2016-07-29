@@ -59,12 +59,8 @@ module.exports = {
       "window.jQuery": "jquery"
     }),
     new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
-    new webpack.ResolverPlugin(
-        new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin(".bower.json", ["main"])
-    )
   ],
   resolve: {
-    modulesDirectories: ["bower_components"],
     alias: { }
   }
 };

@@ -1,0 +1,56 @@
+{
+  "apps": [
+    {
+      "name": "core-frontend",
+      "script": "./server.js",
+      "source_map_support": true,
+      "env": {
+        "COMMON_VARIABLE": true
+      },
+      "env_dev": {
+        "NODE_ENV": "dev"
+      },
+      "env_qa": {
+        "NODE_ENV": "qa"
+      },
+      "env_prod": {
+        "NODE_ENV": "prod"
+      }
+    }
+  ],
+  "deploy": {
+    "dev": {
+      "user": "root",
+      "host": "121.41.81.224",
+      "ref": "origin/dev",
+      "repo": "git@github.com:brokenq/core-frontend.git",
+      "path": "/data/projects/frontend/core-frontend",
+      "post-deploy" : "npm install -d; pm2 startOrRestart ecosystem.json --env dev",
+      "env": {
+        "NODE_ENV": "dev"
+      }
+    },
+    "qa": {
+      "user": "root",
+      "host": "112.124.125.177",
+      "ref": "origin/dev",
+      "repo": "git@github.com:brokenq/core-frontend.git",
+      "path": "/data/projects/frontend/core-frontend",
+      "post-deploy" : "npm install -d; pm2 startOrRestart ecosystem.json --env qa",
+      "env": {
+        "NODE_ENV": "qa"
+      }
+    },
+    "prod": {
+      "user": "root",
+      "host": "121.41.83.171",
+      "ref": "origin/master",
+      "repo": "git@github.com:brokenq/core-frontend.git",
+      "path": "/data/projects/frontend/core-frontend",
+      "post-deploy": "npm install -d; pm2 startOrRestart ecosystem.json --env prod",
+      "env": {
+        "NODE_ENV": "prod"
+      }
+    }
+  }
+}

@@ -6,21 +6,11 @@ var autoprefixer = require('autoprefixer');
 
 module.exports = {
   entry: {
-    app: [path.resolve(__dirname, '../src/script/app.ts')],
-    vendors: [
-      'angular',
-      'jquery',
-      'lodash',
-      'bootstrap/dist/css/bootstrap.css',
-      'bootstrap/dist/fonts/glyphicons-halflings-regular.eot',
-      'bootstrap/dist/fonts/glyphicons-halflings-regular.svg',
-      'bootstrap/dist/fonts/glyphicons-halflings-regular.ttf',
-      'bootstrap/dist/fonts/glyphicons-halflings-regular.woff',
-      'bootstrap/dist/fonts/glyphicons-halflings-regular.woff2'
-    ]
+    app: [path.resolve(__dirname, '../../src/script/main.ts')],
+    vendors: []
   },
   output: {
-    path: path.resolve(__dirname, '../build'),
+    path: path.resolve(__dirname, '../../build'),
     filename: 'bundle.js'
   },
   module: {
@@ -50,17 +40,18 @@ module.exports = {
   postcss: function() {return [precss, autoprefixer];},
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../src/index.jade'),
-      favicon: path.resolve(__dirname, '../favicon.ico')
+      template: path.resolve(__dirname, '../../src/view/index.jade'),
+      favicon: path.resolve(__dirname, '../../favicon.ico')
     }),
     new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery",
-      "window.jQuery": "jquery"
+      // $: "jquery",
+      // jQuery: "jquery",
+      // "window.jQuery": "jquery"
     }),
     new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
   ],
   resolve: {
+    extensions: ['', '.ts', '.js'],
     alias: { }
   }
 };

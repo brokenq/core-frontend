@@ -19,7 +19,7 @@ module.exports = {
       loader: 'ts'
     },{
       test: /\.jade$/,
-      loader: 'jade'
+      loader: 'html!jade-html'
     },{
       test: /\.sass$/,
       loader: 'style!css!postcss!sass'

@@ -5,3 +5,5 @@ bin/
 public/
 npm-debug.log
 typings/
+*.js.map
+src/**/*.js

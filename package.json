@@ -27,8 +27,10 @@
   "devDependencies": {
     "autoprefixer": "^6.3.7",
     "css-loader": "^0.23.1",
+    "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.22.0",
     "jade": "^1.11.0",
+    "jade-html-loader": "^0.0.3",
     "jade-loader": "^0.8.0",
     "json-loader": "^0.5.4",
     "node-sass": "^3.8.0",

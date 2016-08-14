@@ -22,7 +22,8 @@ module.exports = {
       loader: 'html!jade-html'
     },{
       test: /\.sass$/,
-      loader: 'style!css!postcss!sass'
+      // loader: 'style!css!postcss!sass'
+      loader: 'raw!postcss!sass'
     },{
       test: /\.css$/,
       loader: 'style!css'

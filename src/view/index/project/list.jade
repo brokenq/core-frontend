@@ -1,0 +1,5 @@
+p Project List
+
+ul
+  li(*ngFor="let project of projects", (click)="onSelect(project)")
+    span {{project.name}}

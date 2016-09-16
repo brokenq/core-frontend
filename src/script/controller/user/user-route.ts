@@ -3,6 +3,7 @@ import {UserList} from "./user-list";
 import {UserView} from "./user-view";
 import {UserEdit} from "./user-edit";
 import {User} from "./user";
+import {WebpackAsyncRoute} from "@angularclass/webpack-toolkit/dist/index";
 const _USER_ROUTES: Routes = [
     {
         path: 'user',
@@ -10,13 +11,16 @@ const _USER_ROUTES: Routes = [
         children: [
             {
                 path: '',
-                component: UserList
+                component: 'UserList',
+                canActivate: [WebpackAsyncRoute]
             }, {
                 path: ':id',
-                component: UserView
+                component: 'UserView',
+                canActivate: [WebpackAsyncRoute]
             }, {
                 path: ':id/edit',
-                component: UserEdit
+                component: 'UserEdit',
+                canActivate: [WebpackAsyncRoute]
             }
         ]
     }
